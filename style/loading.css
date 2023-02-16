@@ -18,7 +18,7 @@ body {
 }
 .loading {
 	/* 执行动画：动画名 时长 贝塞尔曲线 无限次播放 */
-	/* animation: rotate 2.5s cubic-bezier(0.75, 0, 0.5, 1) 3; */
+	animation: rotate 2.5s cubic-bezier(0.75, 0, 0.5, 1) 3;
 	-webkit-animation: rotate 2.5s cubic-bezier(0.75, 0, 0.5, 1) 3;
 }
 .loading span {
@@ -33,13 +33,13 @@ body {
 .loading span:nth-child(1) {
 	transform: translate(-28px, -28px);
 	/* 执行动画：动画名 时长 贝塞尔曲线 无限次播放 */
-	/* animation: animate1 2.5s cubic-bezier(0.75, 0, 0.5, 1) 3; */
+	animation: animate1 2.5s cubic-bezier(0.75, 0, 0.5, 1) 3;
 	-webkit-animation: animate1 2.5s cubic-bezier(0.75, 0, 0.5, 1) 3;
 }
 .loading span:nth-child(2) {
 	transform: translate(28px, -28px);
 	/* 执行动画：动画名 时长 贝塞尔曲线 无限次播放 */
-	/* animation: animate2 2.5s cubic-bezier(0.75, 0, 0.5, 1) 3; */
+	animation: animate2 2.5s cubic-bezier(0.75, 0, 0.5, 1) 3;
 	-webkit-animation: animate2 2.5s cubic-bezier(0.75, 0, 0.5, 1) 3;
 }
 .loading span:nth-child(3) {
@@ -47,7 +47,7 @@ body {
 	border-radius: 0;
 	transform: scale(0.98) rotate(-45deg);
 	/* 执行动画：动画名 时长 贝塞尔曲线 无限次播放 */
-	/* animation: animate3 2.5s cubic-bezier(0.75, 0, 0.5, 1) 3; */
+	animation: animate3 2.5s cubic-bezier(0.75, 0, 0.5, 1) 3;
 	-webkit-animation: animate3 2.5s cubic-bezier(0.75, 0, 0.5, 1) 3;
 }
 /* 阴影部分 */
@@ -58,7 +58,7 @@ body {
 	background-color: #d9d9d9;
 	border-radius: 50%;
 	top: 50px;
-	/* animation: shadow 2.5s cubic-bezier(0.75, 0, 0.5, 1) 3; */
+	animation: shadow 2.5s cubic-bezier(0.75, 0, 0.5, 1) 3;
 	-webkit-animation: shadow 2.5s cubic-bezier(0.75, 0, 0.5, 1) 3;
 }
 
