@@ -281,7 +281,7 @@ const animationTimeline = () => {
 			0.5,
 			{
 				rotation: 0,
-				x: 1000,
+				x: 20,
 			},
 			"+=1"
 		);
