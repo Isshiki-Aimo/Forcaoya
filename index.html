@@ -5,7 +5,95 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>来者何人！</title>
-		<link rel="stylesheet" href="/style/index.css" />
+		<!-- <link rel="stylesheet" href="/style/index.css" /> -->
+		<style>@import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900");
+			* {
+				/* 初始化 */
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+				font-family: "Poppins", sans-serif;
+			}
+			body {
+				/* 100%窗口高度 */
+				min-height: 100vh;
+				/* 弹性布局 水平+垂直居中 */
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				background-color: #ff8787;
+				flex-direction: column;
+				/* background: linear-gradient(45deg, #fbda61, #ff5acd); */
+			}
+			.mybtn {
+				width: 150px;
+				height: 50px;
+				background-color: #ff8787;
+				border: 1px solid #ff9f9f;
+				align-items: center;
+				margin-top: 35px;
+				border-radius: 5px;
+				color: #fff;
+				font-size: 20px;
+				font-weight: 600;
+				cursor: pointer;
+				transition: all 0.3s ease;
+				display: flex;
+				justify-content: center;
+			}
+			.ipt-wrap {
+				/* 相对定位 */
+				position: relative;
+			}
+			.ipt-hidden {
+				position: absolute;
+				left: 0;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				z-index: 2;
+				opacity: 0;
+			}
+			.ipt-content {
+				display: flex;
+			}
+			.ipt-item {
+				width: 50px;
+				height: 65px;
+				border-radius: 6px;
+				background-color: #ff9f9f;
+				border: 1px solid #ff8787;
+				margin: 0 10px;
+				color: #fff;
+				font-size: 20px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			/* 激活态 */
+			.ipt-item.active {
+				border-color: #fff;
+			}
+			/* 光标 */
+			.ipt-item.active::after {
+				content: "";
+				width: 1px;
+				height: 30px;
+				background-color: #fff;
+				/* 执行动画：动画名 时长 线性的 无限播放 来回轮流播放 */
+				animation: flicker 0.5s linear infinite alternate;
+			}
+			
+			/* 定义动画 */
+			@keyframes flicker {
+				0% {
+					opacity: 0;
+				}
+				100% {
+					opacity: 1;
+				}
+			}
+			</style>
 	</head>
 	<body>
 		<div class="ipt-wrap">
