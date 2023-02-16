@@ -1,135 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 	<head>
-		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-		<meta name="viewport" content="width=device-width,initial-scale=1" />
-		<meta maximum-scale="1,user-scalable" ="no" />
-
-		<title>心意正在加载中....</title>
-		<link rel="shortcut icon" type="image/png" href="img/bear.png" />
-		<style>
-			* {
-				/* 初始化 */
-				margin: 0;
-				padding: 0;
-			}
-			body {
-				/* 100%窗口高度 */
-				height: 100vh;
-				/* 弹性布局 居中 */
-				display: flex;
-				justify-content: center;
-				align-items: center;
-			}
-			.container {
-				/* 绝对定位 */
-				position: absolute;
-				top: 40vh;
-			}
-			.loading {
-				/* 执行动画：动画名 时长 贝塞尔曲线 无限次播放 */
-				animation: rotate 2.5s cubic-bezier(0.75, 0, 0.5, 1) 3;
-				-webkit-animation: rotate 2.5s cubic-bezier(0.75, 0, 0.5, 1) 3;
-			}
-			.loading span {
-				width: 100px;
-				height: 100px;
-				display: block;
-				position: absolute;
-				background-color: #ff8f92;
-				border: 1px solid #ff8f92;
-				border-radius: 100%;
-			}
-			.loading span:nth-child(1) {
-				transform: translate(-28px, -28px);
-				/* 执行动画：动画名 时长 贝塞尔曲线 无限次播放 */
-				animation: animate1 2.5s cubic-bezier(0.75, 0, 0.5, 1) 3;
-				-webkit-animation: animate1 2.5s cubic-bezier(0.75, 0, 0.5, 1) 3;
-			}
-			.loading span:nth-child(2) {
-				transform: translate(28px, -28px);
-				/* 执行动画：动画名 时长 贝塞尔曲线 无限次播放 */
-				animation: animate2 2.5s cubic-bezier(0.75, 0, 0.5, 1) 3;
-				-webkit-animation: animate2 2.5s cubic-bezier(0.75, 0, 0.5, 1) 3;
-			}
-			.loading span:nth-child(3) {
-				position: relative;
-				border-radius: 0;
-				transform: scale(0.98) rotate(-45deg);
-				/* 执行动画：动画名 时长 贝塞尔曲线 无限次播放 */
-				animation: animate3 2.5s cubic-bezier(0.75, 0, 0.5, 1) 3;
-				-webkit-animation: animate3 2.5s cubic-bezier(0.75, 0, 0.5, 1) 3;
-			}
-			/* 阴影部分 */
-			.shadow {
-				position: relative;
-				width: 100px;
-				height: 20px;
-				background-color: #d9d9d9;
-				border-radius: 50%;
-				top: 50px;
-				animation: shadow 2.5s cubic-bezier(0.75, 0, 0.5, 1) 3;
-				-webkit-animation: shadow 2.5s cubic-bezier(0.75, 0, 0.5, 1) 3;
-			}
-
-			/* 定义动画 */
-			/* 心形 左圆 */
-			@keyframes animate1 {
-				60% {
-					transform: scale(0.4);
-				}
-			}
-			/* 心形 右圆 */
-			@keyframes animate2 {
-				40% {
-					transform: scale(0.4);
-				}
-			}
-			/* 心形 中间部分 */
-			@keyframes animate3 {
-				50% {
-					border-radius: 100%;
-					transform: scale(0.5) rotate(-45deg);
-				}
-				100% {
-					transform: scale(0.98) rotate(-45deg);
-				}
-			}
-			/* 再加个心形整体的旋转动画 */
-			@keyframes rotate {
-				50% {
-					transform: rotate(360deg);
-				}
-				100% {
-					transform: rotate(720deg);
-				}
-			}
-			/* 阴影动画 */
-			@keyframes shadow {
-				50% {
-					background-color: #f2f2f2;
-					transform: scale(0.5);
-				}
-			}
-		</style>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>来者何人！</title>
+		<link rel="stylesheet" href="/style/index.css" />
 	</head>
-
 	<body>
-		<div class="container">
-			<div class="loading" id="loading">
-				<span></span>
-				<span></span>
-				<span></span>
+		<div class="ipt-wrap">
+			<input type="text" class="ipt-hidden" />
+			<div class="ipt-content">
+				<p class="ipt-item"></p>
+				<p class="ipt-item"></p>
+				<p class="ipt-item"></p>
+				<p class="ipt-item"></p>
+				<p class="ipt-item"></p>
+				<p class="ipt-item"></p>
 			</div>
-			<div class="shadow"></div>
 		</div>
+		<div class="btn-wrap">
+			<button class="mybtn" onclick="clickFun()">确定</button>
 	</body>
-
-	<script>
-		var el = document.getElementsByClassName("loading")[0];
-		console.log(el);
-		el.addEventListener("animationend", function () {
-			window.location.href = "https://isshiki-aimo.github.io/Forcaoya/mainpage";
-		});
-	</script>
 </html>
+<script src="/script/index.js"></script>
