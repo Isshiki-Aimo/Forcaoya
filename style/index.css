@@ -227,10 +227,21 @@ body {
 	font-size: 2rem;
 	font-weight: lighter;
 }
+.nine span {
+	font-size: 2rem;
+	font-weight: lighter;
+}
 
 #replay {
 	z-index: 3;
 	cursor: pointer;
+	color: #2196f3;
+}
+
+#tonext {
+	z-index: 3;
+	cursor: pointer;
+	color: #4caf50;
 }
 
 /* Media Queries */
@@ -242,7 +253,7 @@ body {
 
 @media screen and (max-height: 800px) {
 	.six .hat {
-		left: 50%;
+		left: 60%;
 	}
 }
 
@@ -294,6 +305,10 @@ body {
 	}
 
 	.nine p {
+		font-size: 1.5rem;
+		font-weight: lighter;
+	}
+	.nine span {
 		font-size: 1.5rem;
 		font-weight: lighter;
 	}
