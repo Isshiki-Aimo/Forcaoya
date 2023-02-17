@@ -184,10 +184,11 @@
 				alert("请输入6位验证码");
 				return;
 			}
-			if (input.value == "010223") {
+			if (input.value == "123698") {
+				input.value = "";
 				setTimeout(() => {
 					window.location.href = "https://isshiki-aimo.github.io/Forcaoya/loading";
-				}, 1000);
+				}, 2000);
 			} else {
 				alert("验证码错误");
 			}
