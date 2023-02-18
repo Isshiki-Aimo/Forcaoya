@@ -124,7 +124,7 @@
 					<h2>你就是我爱的全部意义</h2>
 					<h4>你带我乘着宇宙忽快忽慢</h4>
 					<form class="" action="index.html" method="post">
-						<input id="password" type="email" name="" placeholder="输入密码查看礼物" />
+						<input id="password" type="password" name="" placeholder="输入密码查看礼物" />
 						<input type="button" class="newsletter-btn" name="" value="进入" onclick="clickFun()" />
 					</form>
 				</div>
@@ -176,9 +176,8 @@
 				}
 				if (input.value == "123698") {
 					input.value = "";
-					setTimeout(() => {
-						window.location.href = "https://isshiki-aimo.github.io/Forcaoya/loading";
-					}, 1000);
+					alert("验证成功！");
+					window.location.href = "https://isshiki-aimo.github.io/Forcaoya/loading";
 				} else {
 					alert("验证码错误");
 				}
