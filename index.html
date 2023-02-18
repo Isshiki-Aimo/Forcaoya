@@ -1,198 +1,45 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en" dir="ltr">
 	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>来者何人！</title>
-		<!-- <link rel="stylesheet" href="/style/index.css" /> -->
-		<style>@import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900");
-			* {
-				/* 初始化 */
-				margin: 0;
-				padding: 0;
-				box-sizing: border-box;
-				font-family: "Poppins", sans-serif;
-			}
-			body {
-				/* 100%窗口高度 */
-				min-height: 100vh;
-				/* 弹性布局 水平+垂直居中 */
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				background-color: #ff8787;
-				flex-direction: column;
-				/* background: linear-gradient(45deg, #fbda61, #ff5acd); */
-			}
-			.mybtn {
-				width: 150px;
-				height: 50px;
-				background-color: #ff8787;
-				border: 1px solid #ff9f9f;
-				align-items: center;
-				margin-top: 35px;
-				border-radius: 5px;
-				color: #fff;
-				font-size: 20px;
-				font-weight: 600;
-				cursor: pointer;
-				transition: all 0.3s ease;
-				display: flex;
-				justify-content: center;
-			}
-			.ipt-wrap {
-				/* 相对定位 */
-				position: relative;
-			}
-			.ipt-hidden {
-				position: absolute;
-				left: 0;
-				top: 0;
-				right: 0;
-				bottom: 0;
-				z-index: 2;
-				opacity: 0;
-			}
-			.ipt-content {
-				display: flex;
-			}
-			.ipt-item {
-				width: 50px;
-				height: 65px;
-				border-radius: 6px;
-				background-color: #ff9f9f;
-				border: 1px solid #ff8787;
-				margin: 0 10px;
-				color: #fff;
-				font-size: 20px;
-				display: flex;
-				justify-content: center;
-				align-items: center;
-			}
-			/* 激活态 */
-			.ipt-item.active {
-				border-color: #fff;
-			}
-			/* 光标 */
-			.ipt-item.active::after {
-				content: "";
-				width: 1px;
-				height: 30px;
-				background-color: #fff;
-				/* 执行动画：动画名 时长 线性的 无限播放 来回轮流播放 */
-				animation: flicker 0.5s linear infinite alternate;
-			}
-			
-			/* 定义动画 */
-			@keyframes flicker {
-				0% {
-					opacity: 0;
-				}
-				100% {
-					opacity: 1;
-				}
-			}
-			</style>
+		<meta charset="utf-8" />
+		<title>按时长大🎂</title>
+		<link rel="stylesheet" href="/style/index.css" />
+		<link rel="shortcut icon" type="image/png" href="img/bear2.png" />
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
 	</head>
 	<body>
-		<div class="ipt-wrap">
-			<input type="text" class="ipt-hidden" />
-			<div class="ipt-content">
-				<p class="ipt-item"></p>
-				<p class="ipt-item"></p>
-				<p class="ipt-item"></p>
-				<p class="ipt-item"></p>
-				<p class="ipt-item"></p>
-				<p class="ipt-item"></p>
+		<div class="page">
+			<div class="countdown-col col">
+				<div class="time middle">
+					<span>
+						<div id="d">12</div>
+						Days
+					</span>
+					<span>
+						<div id="h">06</div>
+						Hours
+					</span>
+					<span>
+						<div id="m">35</div>
+						Minuts
+					</span>
+					<span>
+						<div id="s">54</div>
+						Seconds
+					</span>
+				</div>
+			</div>
+			<div class="newsletter-col col">
+				<div class="newsletter middle">
+					<h2>你就是我爱的全部意义</h2>
+					<h4>输入密码查看礼物</h4>
+					<form class="" action="index.html" method="post">
+						<input id="password" type="email" name="" placeholder="" />
+						<input type="button" class="newsletter-btn" name="" value="进入" onclick="clickFun()" />
+					</form>
+				</div>
 			</div>
 		</div>
-		<div class="btn-wrap">
-			<button class="mybtn" onclick="clickFun()">确定</button>
+		<script src="/script/countdown.js"></script>
 	</body>
-	<script>// 要操作的元素
-		const input = document.querySelector(".ipt-hidden");
-		const items = document.querySelectorAll(".ipt-item");
-		
-		// 正则表达式：6位 0-9
-		const reg = /^[0-9]{0,6}$/;
-		// 临时存储输入的值
-		let temp_val = "";
-		
-		// 输入框获得焦点事件
-		input.addEventListener("focus", () => {
-			// 光标移到最后
-			input.setSelectionRange(input.value.length - 1, input.value.length);
-			const val = input.value;
-			if (!val) {
-				// 未输入时，默认第一格为激活态
-				items[0].classList.add("active");
-				return;
-			}
-			// 判断哪一个格子需要设置激活态样式
-			if (val.length < items.length) {
-				items[val.length].classList.add("active");
-			}
-			// 最后一格
-			if (val.length == items.length) {
-				items[val.length - 1].classList.add("active");
-			}
-		});
-		// 输入框失去焦点事件
-		input.addEventListener("blur", () => {
-			// 移除激活态样式
-			items.forEach((item) => {
-				item.classList.remove("active");
-			});
-		});
-		// 输入框输入事件
-		input.addEventListener("input", (e) => {
-			// 先清空文本并移除激活态样式
-			items.forEach((item) => {
-				item.textContent = "";
-				item.classList.remove("active");
-			});
-			// 获取输入的值
-			const val = e.target.value;
-			// 正则验证
-			if (reg.test(val)) {
-				temp_val = val;
-			} else {
-				input.value = temp_val;
-			}
-			// 将输入的值拆分为数组
-			const arr = input.value.split("");
-			if (!arr.length) {
-				// 没输入，默认第一格为激活态
-				items[0].classList.add("active");
-			}
-			// 循环设置每一格的文本和样式
-			arr.forEach((item, index) => {
-				items[index].textContent = item;
-				items[index].classList.remove("active");
-				if (items[index + 1]) {
-					items[index + 1].classList.add("active");
-				}
-				if (index == items.length - 1) {
-					items[index].classList.add("active");
-				}
-			});
-		});
-		
-		function clickFun() {
-			if (input.value.length != 6) {
-				alert("请输入6位验证码");
-				return;
-			}
-			if (input.value == "123698") {
-				input.value = "";
-				setTimeout(() => {
-					window.location.href = "https://isshiki-aimo.github.io/Forcaoya/loading";
-				}, 2000);
-			} else {
-				alert("验证码错误");
-			}
-		}
-		</script>
 </html>
-<!-- <script src="/script/index.js"></script> -->
