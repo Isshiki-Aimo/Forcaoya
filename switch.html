@@ -14,7 +14,7 @@
 		<!-- 父盒子 -->
 		<label class="box">
 			<!-- 复选框，有选中状态 -->
-			<input type="checkbox" />
+			<input type="checkbox" onclick="jumpto()" />
 
 			<!-- 心形图标 -->
 			<svg viewBox="0 0 33 23" fill="pink">
@@ -23,4 +23,12 @@
 			</svg>
 		</label>
 	</body>
+
+	<script>
+		function jumpto() {
+			setTimeout(() => {
+				window.location.href = "https://isshiki-aimo.github.io/Forcaoya/heartbeat";
+			}, 1000);
+		}
+	</script>
 </html>
