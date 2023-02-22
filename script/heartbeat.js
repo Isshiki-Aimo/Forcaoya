@@ -233,3 +233,7 @@ let a = (function (canvas) {
 		render();
 	}, 10);
 })(document.getElementById("heart"));
+
+function junpToLast() {
+	console.log(1);
+}
