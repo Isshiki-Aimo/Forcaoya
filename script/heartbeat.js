@@ -235,5 +235,7 @@ let a = (function (canvas) {
 })(document.getElementById("heart"));
 
 function junpToLast() {
-	console.log(1);
+	setTimeout(() => {
+		window.location.href = "https://isshiki-aimo.github.io/Forcaoya/last";
+	}, 8000);
 }
